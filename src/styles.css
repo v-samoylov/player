@@ -34,6 +34,8 @@
 .drag-grid, .grid-container { height: 12px; }
 .hours-list {
 	position: relative;
+	display: inline;
+	white-space: nowrap;
 }
 .hours-list--over-slide {
 	position: absolute;
@@ -58,4 +60,10 @@ thead > * {
 }
 td {
 	padding: 10px;
+}
+.delete-btn-column {
+	width: 100%;
+}
+.delete-btn-column > button {
+	float: right;
 }

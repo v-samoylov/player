@@ -1,23 +1,25 @@
 
 <div class="content">
-  <label class="add-track-btn"><input type="file" name="" (change)="uploadTrack($event)">Добавить трек</label>
+  <label class="add-track-btn"><input type="file" name="" (change)="addTrack($event)">Добавить трек</label>
   <table>
     <thead>
-      <td class="track-name-column"></td>
-      <td>
-          <div class="hours-list">
-            <div
-              *ngFor="let hour of hourList; index as i"
-              [id]="'hour' + i"
-              class="hour-placeholder"
-              [style.margin-left]="i && hoursLeftMargin"
-            >
-              {{ getCoordinates(i) }}
-              {{ hour }}
+      <tr>
+        <td class="track-name-column"></td>
+        <td>
+            <div class="hours-list">
+              <div
+                *ngFor="let hour of hourList; index as i"
+                [id]="'hour' + i"
+                class="hour-placeholder"
+                [style.margin-left]="i && hoursLeftMargin"
+              >
+                {{ getCoordinates(i) }}
+                {{ hour }}
+              </div>
             </div>
-          </div>
-      </td>
-      <td></td>
+        </td>
+        <td></td>
+      </tr>
     </thead>
     <tbody>
       <tr *ngFor="let track of trackList; index as i">
@@ -42,7 +44,7 @@
               </div> 
             </div>
         </td>
-        <td>
+        <td class="delete-btn-column">
           <button (click)="removeTrack(i)">
             <i class="fa fa-trash" aria-hidden="true"></i>
           </button>
