@@ -1,0 +1,54 @@
+
+<div class="content">
+  <label class="add-track-btn"><input type="file" name="" (change)="uploadTrack($event)">Добавить трек</label>
+  <table>
+    <thead>
+      <td class="track-name-column"></td>
+      <td>
+          <div class="hours-list">
+            <div
+              *ngFor="let hour of hourList; index as i"
+              [id]="'hour' + i"
+              class="hour-placeholder"
+              [style.margin-left]="i && hoursLeftMargin"
+            >
+              {{ getCoordinates(i) }}
+              {{ hour }}
+            </div>
+          </div>
+      </td>
+      <td></td>
+    </thead>
+    <tbody>
+      <tr *ngFor="let track of trackList; index as i">
+        <td class="track-name-column">
+          <div>{{ track.name }}</div>
+        </td>
+        <td>
+          <div #myBounds class="grid-container">
+              <div
+                ngDraggable
+                ngResizable
+                class="drag-grid resizable-widget"
+                [bounds]="myBounds"
+                [inBounds]="true"
+                rzHandles="w,e"
+                [rzContainment]="myBounds"
+                [zIndex]="100"
+                [preventDefaultEvent]="true"
+                [style.width]="minDragGridWidth"
+                [style.background]="getRandomColor(track)"
+              >
+              </div> 
+            </div>
+        </td>
+        <td>
+          <button (click)="removeTrack(i)">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

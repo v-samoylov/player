@@ -1,0 +1,61 @@
+[type="file"] {
+	display: none;
+}
+.content {
+	padding: 0 10px;
+}
+.add-track-btn {
+	padding: 10px;
+	border: 1px solid gray;
+	border-radius: 10px;
+}
+.grid-container {
+	position: relative;
+}
+.drag-grid {
+	position: absolute;
+	width: 0;
+	background-color: #f8cb00;
+	color: #fff;
+	line-height: 12px;
+	text-align: center;
+	border-radius: 10px;
+}
+.grid {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	background-color: #20c997;
+	color: #fff;
+	text-align: center;
+	line-height: 50px;
+	border: 1px dashed #067002;
+}
+.drag-grid, .grid-container { height: 12px; }
+.hours-list {
+	position: relative;
+}
+.hours-list--over-slide {
+	position: absolute;
+}
+.hour-placeholder {
+	height: 100%;
+	display: inline-block;
+}
+.track-name-column {
+	width: 200px;
+	border-right: 1px solid black;
+}
+table {
+	width: 100%;
+	border: 1px solid black;
+}
+table td + td {
+	padding-left: 35px;
+}
+thead > * {
+	border-bottom: 1px solid black;
+}
+td {
+	padding: 10px;
+}
